@@ -9,8 +9,8 @@ contract OpenAccess is ERC721 {
 
     constructor() ERC721("Open Access Token", "OPEN") {}
 
-    function grantAccess(address to) public {
+    function grantAccess() public {
         uint256 tokenId = _nextTokenId++;
-        _safeMint(to, tokenId);
+        _safeMint(msg.sender, tokenId);
     }
 }
